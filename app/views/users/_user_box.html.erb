@@ -1,0 +1,6 @@
+<div>
+  Username: <%= link_to user.username, user_path(user.id) %><br />
+  Number of tweets: <%= user.tweets.size %><br />
+  Number of comments: <%= user.comments.size %><br />
+  Created: <%= user.created_at %>
+</div>

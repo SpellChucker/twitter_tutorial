@@ -1,0 +1,12 @@
+<h1>Users#index</h1>
+
+<%= form_for @user do |f| %>
+  <%= f.text_field :username, :placeholder => "Enter username" %>
+  <%= f.submit %>
+<% end %>
+
+<hr />
+
+<% @users.each do |u| %>
+  <%= render partial: 'user_box', locals: { user: u } %>
+<% end %>

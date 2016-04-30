@@ -1,0 +1,5 @@
+<div>
+  <%= tweet.user.username %>:
+  <%= link_to tweet.body, tweet_path(tweet.id) %> -
+  <%= tweet.created_at %>
+</div>
