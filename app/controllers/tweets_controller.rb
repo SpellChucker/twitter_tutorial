@@ -7,8 +7,9 @@ class TweetsController < ApplicationController
   def create
     if params[:tweet][:body].size == 0
       flash[:alert] = "Tweet must have some substance!"
+      redirect_to root_path
     else
-      tweet = Tweet.new(body: params[:tweet][:body], user_id: 1)
+      tweet = Tweet.new(body: params[:tweet][:body], user_id: session[:user_id])
       if tweet.save
         redirect_to root_path
       else

@@ -7,6 +7,7 @@ class UsersController < ApplicationController
   def create
     if params[:user][:username].size == 0
       flash[:alert] = "Username is required!"
+      redirect_to users_path
     else
       user = User.new(username: params[:user][:username])
       if user.save
